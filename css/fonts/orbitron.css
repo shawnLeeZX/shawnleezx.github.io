@@ -1,0 +1,28 @@
+@font-face {
+font-family: 'Orbitron Black';
+src: url('/fonts/orbitron/orbitron-black-webfont.eot');
+src: url('/fonts/orbitron/orbitron-black-webfont.woff') format('woff'),
+     url('/fonts/orbitron/orbitron-black-webfont.ttf') format('truetype'),
+     url('/fonts/orbitron/orbitron-black-webfont.svg') format('svg');
+}
+@font-face {
+font-family: 'Orbitron Bold';
+src: url('/fonts/orbitron/orbitron-bold-webfont.eot');
+src: url('/fonts/orbitron/orbitron-bold-webfont.woff') format('woff'),
+     url('/fonts/orbitron/orbitron-bold-webfont.ttf') format('truetype'),
+     url('/fonts/orbitron/orbitron-bold-webfont.svg') format('svg');
+}
+@font-face {
+font-family: 'Orbitron Light';
+src: url('/fonts/orbitron/orbitron-light-webfont.eot');
+src: url('/fonts/orbitron/orbitron-light-webfont.woff') format('woff'),
+     url('/fonts/orbitron/orbitron-light-webfont.ttf') format('truetype'),
+     url('/fonts/orbitron/orbitron-light-webfont.svg') format('svg');
+}
+@font-face {
+font-family: 'Orbitron Medium';
+src: url('/fonts/orbitron/orbitron-medium-webfont.eot');
+src: url('/fonts/orbitron/orbitron-medium-webfont.woff') format('woff'),
+     url('/fonts/orbitron/orbitron-medium-webfont.ttf') format('truetype'),
+     url('/fonts/orbitron/orbitron-medium-webfont.svg') format('svg');
+}

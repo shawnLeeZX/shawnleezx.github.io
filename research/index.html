@@ -113,8 +113,8 @@
 </div>
 
 <div class="container content">
-  <p>The following introduces the current significant directions that I am
-working on.</p>
+  <p>The following introduces search visions, and problems currently being
+worked on.</p>
 
 <h3 id="science-of-intelligence">Science of intelligence</h3>
 
@@ -138,7 +138,7 @@ DNNs that enable learning of the network to stay within a phase where arbitrary
 learning errors could be reduced. That is, biotic or cognitive complexity
 arises from adaptive-symmetries breaking.</p>
 
-<h3 id="embodied-intelligence">Embodied intelligence</h3>
+<h2 id="embodied-intelligence-and-alignment">Embodied intelligence and alignment</h2>
 
 <p>The adaptive-symmetries breaking work sets the first step, or foundation, for
 the subsequent efforts. More specifically, the previous works analyze the
@@ -147,60 +147,72 @@ conceptually clean, yet fundamental intelligence arises from a being embodied
 in an environment whose survival requires daily feedback and decisions on what
 actions to take.</p>
 
-<p>Therefore, currently, in the sense of large themes, I am working on
-something we might call <em>embodied intelligence</em>. More specifically, the
-current breakthrough of large language model (LLM) is such a
-uncertainty-reducing system in a semantic word worlds; the system is
-trained by minimizing perplexity, another word for uncertainty. It is
-a fitting setting to study embodied decision intelligence. For example, there
-are two major directions.</p>
+<p>Therefore, the next stage is to study realistic open systems that interact with
+their environments. The potential complexity of the system and complexity of
+the environment should be sufficiently large, such that a level that we denote
+as intelligence in daily sense could be reached. This area of study is roughly
+known as <em>Embodied Intelligence</em>.</p>
 
-<p>First, next-word prediction might be understood as something that might be
-called instincts, and it lacks long-range decision capability to be truly
-useful as an competent assistant (e.g., JARVIS in the film Iron Man). To make a
-language model “understand” our request, a mechanism of feedback and long-chain
-reasoning need to be incorporated. For example, currently, mechanism of giving
-feedback (i.e., Reinforcement Learning from Human Feedback, RLHF) and reasoning
-(i.e., Chain of Thoughts) are still largely independent techniques.</p>
-
-<p>Second, natural words are already coarse-grained (in other words, semantic)
-information packet of the words, and thus predicting next-word sidesteps the
-problem of building coarse-grained abstraction of the world from raw signals
-(e.g., pixels). A system that could be call general intelligence in the
-physical world (e.g., autonomous robots) needs somehow to have a mechanism to
-build abstractions from raw signals, and the current LLM paradigm lacks this.</p>
-
-<p>Those two problems are major challenges to realize the transformational impact
+<p>There are two fitting pilot problems to study this area, for example. First,
+the current breakthrough of large language model (LLM) is such an
+uncertainty-reducing system in a semantic word worlds; the system is trained by
+minimizing perplexity, another word for uncertainty. For LLM, the environment
+is the Internet, and thus LLM agents are systems that interact with the
+environment in the sense of embodied intelligence.  Second, the next
+industrial-revolution scale innovation probably comes from cybernetic/control
+systems such as self-driving cars, and those are classic embodied systems.
+Those two problems are major challenges to realize the transformational impact
 of artificial intelligence on societies.</p>
 
-<h3 id="alignment">Alignment</h3>
+<p>These aforementioned problems also overlap with the area of
+alignment.  The developmental progress of an organism is a process where it
+explores possible actions in the environment, and accumulates a repository of
+<em>action sequences</em> such that it could be more fit to perpetuate in the
+environment. Therefore, to align a model is to align this developmental
+progress.  Instead of the common denotation of “aligning” catastrophic
+superintelligence, alignment might be more like finding the right formalism of
+interaction between the environment (e.g., Internet) and the model/agent.</p>
 
-<p>These aforementioned problems overplay with the more specialized field
-of <em>alignment</em>. Instead of the common denotation of “aligning”
-catastrophic superintelligence, alignment might be more like finding
-the right formalism of interaction between the environment (e.g.,
-Internet) and the model/agent.</p>
+<h2 id="research-problems">Research Problems</h2>
 
-<p>For example, RLHF aligns a transformer with scalar reward feedback. The
-feedback characterizes whether a few sentences omitted by the transformer are
-useful and harmless. However, what is the mechanism of the transformers, and
-structure of the feedback? both of them are rather black-boxy: the opaque of
-the former is well known, and the latter is the black box of human
-preferences. The lack of characterization on structure induces problems such as
-reward hacking; and clarification on the structure might enable scalable
-oversight (e.g., constitutional AI). Principled characterization on the
-mechanics of transformers might enable building abstraction from raw pixels
-signals.  In other words, alignment is partly about characterizing both the
-model, the environmental feedback and how they interact.</p>
+<p>More concretely, some concrete angles that we are working on are
+shortly introduced in the following.</p>
 
-<p>Putting it in another way, neither LLM or end-to-end control systems
-(e.g., autonomous vehicles) has a mechanically clear algorithm, a
-reliable training procedure, robust behaviors to adversarial inputs,
-or scalable access to feedback from environments. As a result, LLM has
-trouble making correct decisions with long-chain reasoning, and
-autonomous vehicles have poor generalization capacity. Therefore, we
-are currently working on, for example, more reliable, robust and
-scalable alignment methods.</p>
+<h3 id="foundation-models-for-control">Foundation models for control</h3>
+
+<p>To move beyond the word world, an intelligence in the physical world (e.g.,
+autonomous robots) needs somehow to have a mechanism to build abstractions from
+raw signals. Natural words are already coarse-grained (in other words,
+semantic) information packet of the words, and thus predicting next-word
+sidesteps the problem of building coarse-grained abstraction of the
+world from raw signals (e.g., pixels). A foundation model for control
+needs such abstraction capability, and this abstraction might manifest
+as animal-level instinct to navigate in the physical world.</p>
+
+<h3 id="complex-reasoning">Complex reasoning</h3>
+
+<p>In addition to the animal-level instinct, a useful model needs to have
+some cognitive ability, manifesting as long-range decision or
+reasoning capability. We study this problem under the setting of LLM.
+More specifically, next-word prediction might be understood as
+something that might be called instincts, and it lacks long-range decision
+capability to be useful as an competent assistant (e.g., JARVIS in the film
+Iron Man). To make a language model “understand” our request, a
+mechanism of feedback and long-chain reasoning need to be
+incorporated. Currently, this ability is nascent in language model,
+and we are studying how to enable complex and long-range reasoning and
+decision in LLM.</p>
+
+<h3 id="superalignment-and-reinforcement-learning-fundamental">Superalignment, and reinforcement learning fundamental</h3>
+
+<p>The previous problems focuses more on the model side of the formalism
+(between environment and model/agent), and at the environment side, we
+also work on giving language feedback or (AI feedback) for
+alignment. The idea is that generation is a NP problem, while
+discrimination is a P problem, and thus a good enough model
+could self-critique and self-improve. In addition to enabling scalable
+alignment, this might provide solution to hard RL problems such as
+sparse reward, and instability in RL training.</p>
 
 </div>
 

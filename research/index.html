@@ -113,10 +113,27 @@
 </div>
 
 <div class="container content">
-  <p>The following introduces search visions, and problems currently being
+  <p>The following introduces research visions, and problems currently being
 worked on.</p>
 
-<h3 id="science-of-intelligence">Science of intelligence</h3>
+<ul id="markdown-toc">
+  <li><a href="#research-vision" id="markdown-toc-research-vision">Research vision</a>    <ul>
+      <li><a href="#science-of-intelligence-biotic-or-congnitive-complexity-through-adaptive-symmetries-breaking" id="markdown-toc-science-of-intelligence-biotic-or-congnitive-complexity-through-adaptive-symmetries-breaking">Science of intelligence: biotic or congnitive complexity through adaptive symmetries breaking</a></li>
+      <li><a href="#embodied-intelligence-uncertainty-reduction-through-feedback-control-loop-with-environment" id="markdown-toc-embodied-intelligence-uncertainty-reduction-through-feedback-control-loop-with-environment">Embodied intelligence: uncertainty reduction through feedback-control loop with environment</a></li>
+      <li><a href="#foundation-model-and-alignment-uncertainty-reduction-future-prediction-fast-and-slow" id="markdown-toc-foundation-model-and-alignment-uncertainty-reduction-future-prediction-fast-and-slow">Foundation model and alignment: uncertainty reduction (future prediction) fast and slow</a></li>
+    </ul>
+  </li>
+  <li><a href="#research-problems" id="markdown-toc-research-problems">Research Problems</a>    <ul>
+      <li><a href="#foundation-models-for-control" id="markdown-toc-foundation-models-for-control">Foundation models for control</a></li>
+      <li><a href="#complex-reasoning" id="markdown-toc-complex-reasoning">Complex reasoning</a></li>
+      <li><a href="#superalignment-and-reinforcement-learning-fundamentals" id="markdown-toc-superalignment-and-reinforcement-learning-fundamentals">Superalignment, and reinforcement learning fundamentals</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="research-vision">Research vision</h3>
+
+<h4 id="science-of-intelligence-biotic-or-congnitive-complexity-through-adaptive-symmetries-breaking">Science of intelligence: biotic or congnitive complexity through adaptive symmetries breaking</h4>
 
 <p>Previously, I have spent about 10 years investigating first-principle
 derivation of Deep Neural Networks (DNNs), crystallizing the ideas in two
@@ -138,14 +155,16 @@ DNNs that enable learning of the network to stay within a phase where arbitrary
 learning errors could be reduced. That is, biotic or cognitive complexity
 arises from adaptive-symmetries breaking.</p>
 
-<h2 id="embodied-intelligence-and-alignment">Embodied intelligence and alignment</h2>
+<h4 id="embodied-intelligence-uncertainty-reduction-through-feedback-control-loop-with-environment">Embodied intelligence: uncertainty reduction through feedback-control loop with environment</h4>
 
-<p>The adaptive-symmetries breaking work sets the first step, or foundation, for
-the subsequent efforts. More specifically, the previous works analyze the
-simplest yet most fundamental setting, i.e., object classification; it is
-conceptually clean, yet fundamental intelligence arises from a being embodied
-in an environment whose survival requires daily feedback and decisions on what
-actions to take.</p>
+<p>The adaptive-symmetries breaking work sets the first step, or
+foundation, for the subsequent efforts. More specifically, the
+previous works analyze the simplest yet most fundamental setting,
+i.e., object classification; it is conceptually clean, yet fundamental
+intelligence arises from a being embodied in an environment whose
+reduction of survival uncertainty requires building a feedback and
+control loop (that is, daily feedback from environment and decisions
+on what actions to take) with the environment.</p>
 
 <p>Therefore, the next stage is to study realistic open systems that interact with
 their environments. The potential complexity of the system and complexity of
@@ -164,46 +183,72 @@ systems such as self-driving cars, and those are classic embodied systems.
 Those two problems are major challenges to realize the transformational impact
 of artificial intelligence on societies.</p>
 
-<p>These aforementioned problems also overlap with the area of
-alignment.  The developmental progress of an organism is a process where it
-explores possible actions in the environment, and accumulates a repository of
-<em>action sequences</em> such that it could be more fit to perpetuate in the
-environment. Therefore, to align a model is to align this developmental
-progress.  Instead of the common denotation of “aligning” catastrophic
-superintelligence, alignment might be more like finding the right formalism of
-interaction between the environment (e.g., Internet) and the model/agent.</p>
+<h4 id="foundation-model-and-alignment-uncertainty-reduction-future-prediction-fast-and-slow">Foundation model and alignment: uncertainty reduction (future prediction) fast and slow</h4>
 
-<h2 id="research-problems">Research Problems</h2>
+<p>The goal of decreasing uncertainty of reproduction is decomposed into
+two problems by biotic intelligence by timescales: the prediction
+under and above hundreds of milliseconds. The mechanism that predicts
+at the fast timescale is known as instincts, and the mechanism that
+predicts at the slow timescale is known as consciousness, reasoning,
+memory, and other modules function at our daily life timescale. These
+are known as system 1 and system 2.</p>
+
+<p>Therefore, the study of embodied intelligence is broken down into
+studying these two mechanisms.  The frontier of the research thus has
+reached the state where we have a system close to human instincts in
+language processing—this is known as pretrained <em>Foundation Models</em>. And
+the slow system is being investigated largely under the name of <em>Agent</em>,
+which involves reasoning, vector memory and other technologies. The
+bridge of the two is investigated under the name of <em>Alignment</em>.</p>
+
+<p>Some clarification might be needed here, given that alignment has a
+connotation to safety issues.  The developmental progress of an
+organism is a process where it explores possible actions in the
+environment, and accumulates a repository of <em>action sequences</em> such
+that it could be more fit to perpetuate in the environment. Therefore,
+to align a model is to align this developmental progress, and thus the
+capability alignment and human value alignment (i.e., the common
+denotation of “aligning” catastrophic superintelligence) are deeply
+intertwined. They both might be studied under the theme to find the
+right formalism of interaction between the environment (e.g.,
+Internet) and the model/agent.</p>
+
+<h3 id="research-problems">Research Problems</h3>
 
 <p>More concretely, some concrete angles that we are working on are
-shortly introduced in the following.</p>
+briefly introduced in the following.</p>
 
-<h3 id="foundation-models-for-control">Foundation models for control</h3>
+<h4 id="foundation-models-for-control">Foundation models for control</h4>
 
-<p>To move beyond the word world, an intelligence in the physical world (e.g.,
-autonomous robots) needs somehow to have a mechanism to build abstractions from
-raw signals. Natural words are already coarse-grained (in other words,
-semantic) information packet of the words, and thus predicting next-word
-sidesteps the problem of building coarse-grained abstraction of the
-world from raw signals (e.g., pixels). A foundation model for control
-needs such abstraction capability, and this abstraction might manifest
-as animal-level instinct to navigate in the physical world.</p>
+<p>To move beyond the word world, current foundation models lack
+instincts in the physical world. Large language model builds this kind
+of instinct through pretraining on trillions of worlds, and this
+instinct is an abstraction of the word world. However, this way of
+building abstract over word world might not naively generalize to
+other categories of signals. Natural words are already coarse-grained (in other
+words, semantic) information packet of the words, and thus predicting
+next-word sidesteps the problem of building coarse-grained abstraction
+of the world from raw signals (e.g., pixels). An intelligence in the
+physical world (e.g., autonomous robots) needs somehow to have a
+mechanism to build abstractions from raw signals. A foundation model
+for control needs such abstraction capability, and this abstraction
+might manifest as animal-level instinct to navigate in the physical
+world.</p>
 
-<h3 id="complex-reasoning">Complex reasoning</h3>
+<h4 id="complex-reasoning">Complex reasoning</h4>
 
-<p>In addition to the animal-level instinct, a useful model needs to have
-some cognitive ability, manifesting as long-range decision or
-reasoning capability. We study this problem under the setting of LLM.
-More specifically, next-word prediction might be understood as
-something that might be called instincts, and it lacks long-range decision
-capability to be useful as an competent assistant (e.g., JARVIS in the film
-Iron Man). To make a language model “understand” our request, a
-mechanism of feedback and long-chain reasoning need to be
-incorporated. Currently, this ability is nascent in language model,
-and we are studying how to enable complex and long-range reasoning and
-decision in LLM.</p>
+<p>A significant capability of the slow system manifests as long-horizon
+decision or reasoning capability. We study this problem under the
+setting of LLM.  As discussed previously, next-word prediction might
+be understood as something that might be called instincts, and it
+lacks long-horizon decision capability to be useful as an competent
+assistant (e.g., one that we could truly delegate complex tasks). To
+make a language model “understand” our request, a mechanism of
+feedback and long-chain reasoning need to be incorporated. Currently,
+this ability is nascent in language model, and we are studying how to
+enable complex and long-range reasoning and decision in LLM.</p>
 
-<h3 id="superalignment-and-reinforcement-learning-fundamental">Superalignment, and reinforcement learning fundamental</h3>
+<h4 id="superalignment-and-reinforcement-learning-fundamentals">Superalignment, and reinforcement learning fundamentals</h4>
 
 <p>The previous problems focuses more on the model side of the formalism
 (between environment and model/agent), and at the environment side, we

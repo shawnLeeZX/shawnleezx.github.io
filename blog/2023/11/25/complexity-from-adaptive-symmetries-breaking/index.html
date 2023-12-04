@@ -349,6 +349,18 @@ contribute symmetrically to the output neuron.</p>
 <caption> Circuit symmetry: the value of the circuits distributed symmetrically. </caption>
 </figure>
 
+<p>The circuit symmetry (including the broken circuit symmetry introduced
+later) is given as a theorem in the article <a class="citation" href="#shawn_w_m_li_2022_5814935">(Li, 2022)</a>, which is proved by proving convergence
+by characteristic function between the circuit distribution and a
+symmetric distribution (theorem 1 in the paper), and looks something
+like this</p>
+
+\[\forall g_t \in G_t,  \left| \mathbb{E}\left[ e^{i(\frac{\sqrt{n}}{c})^{e-s}\Psi^{\overline{l}}_{g_t.\boldsymbol{i}}t}\right] - \mathbb{E}\left[e^{i(\frac{\sqrt{n}}{c})^{e-s}\hat{\Psi}^{\overline{l}}_{g_t.\boldsymbol{i}}t}  \right]\right| \\
+            \leq \left| O\left( (\frac{1}{2\sqrt{n}})^{e-s-b_{\boldsymbol{i}}}\sin(t) \right) \right|,\]
+
+<p>where $\Psi$ is a formalism for circuits in the article <a class="citation" href="#shawn_w_m_li_2022_5814935">(Li, 2022)</a>. The bound here is not intended to be
+readable, and interesting readers may refer to the paper.</p>
+
 <p>And we could mathematically prove and experimentally verify that the
 coarse-graining (or summation) of those symmetrically distributed
 circuits (in which, for example, the output neuron is literally a
@@ -448,7 +460,7 @@ constrains among the neurons (because the change of one weight could
 also influence exponential number of circuits as well).</p>
 
 <p>In <a class="citation" href="#shawn_w_m_li_2022_5814935">(Li, 2022)</a>, we formally show that when
-there are certain <em>diversity</em> among neurons, despite the circuit
+there are certain diversity among neurons, despite the circuit
 symmetries would be broken during training, their macroscopic adaptive
 symmetry would not be broken. As a result, there always exist
 directions where the output of the final neuron could be modified to
@@ -466,10 +478,26 @@ function.</p>
 <caption>Eigenvalue distribution throughout training.</caption>
 </figure>
 
+<p>The symmetry of eigenvalue distribution is given as theorem 2 in the
+article <a class="citation" href="#shawn_w_m_li_2022_5814935">(Li, 2022)</a>, which is proved by
+convergence of probability distribution on matrices, and looks something
+like this,</p>
+
+\[P\left(  \left|  \text{tr }\left( \boldsymbol{B} \boldsymbol{G}(z) - \boldsymbol{M}(z) \right) \right|
+    \leq ||\boldsymbol{B}|| \frac{N^{\epsilon}}{N\Im z} \right)
+    \geq  1 - CN^{-D},\]
+
+<p>where $G$ is the resolvent of the Hessian matrix, and $M$ is the
+resolvent of a matrix with symmetric eigenvalue distribution. The
+bound here is not intended to be readable, and interesting readers may
+refer to the paper.</p>
+
 <p>In this case, the order parameter of the DNN system is the
 distribution of gradients, which is also symmetric throughout training
-(c.f. <a href="#neuron-assembly">the gradient distribution figure</a>). As acute
-readers might notice, compared with the single scalar that
+(c.f. <a href="#neuron-assembly">the gradient distribution figure</a>). Recall
+that nonzero gradient implies directions to reduce errors; this
+characterizes the order of DNN, i.e., adaptability or plasticity.  As
+acute readers might notice, compared with the single scalar that
 characterizes the order of the simple physical system like water, the
 order parameter of the DNN system is high dimensional. The philosophy
 of science that defines order parameter is discussed in <a class="citation" href="#shawn_w_m_li_2022_5814935">(Li, 2022)</a>, and we would not delve into them here.</p>
@@ -479,16 +507,10 @@ case of the simple physical system like water molecule system, but is
 high dimensional as well, and is formalized with rather complicated
 math—interested readers could read the paper. Here, we demonstrate
 the control parameter visually. The control parameter characterizes
-the interaction among neurons, and as training progresses and circuits
-breaks their symmetries, the interaction among neurons increases, as
+the interaction among neuron assemblies, and as training progresses and circuits
+breaks their symmetries, the interaction among assemblies increases, as
 shown in the following, where each pixel represents the correlation
-among neural assemblies. The interaction could be roughly understood
-as the interaction between the <em>complexity of the dataset</em>, and the
-potential complexity of the information the network is able to
-encode, or in other words, <em>network capacity</em>. In this case, the
-interaction are still rather sparse given that the dataset is well
-beyond the network capacity. As a result, there are sufficient circuit
-symmetries that enable the network to reach zero errors.</p>
+among neural assemblies (more technically Hessian entries).</p>
 
 <figure style="text-align: center;" id="neuron-assembly">
 <img src="/assets/fig_6b_covariance_matrix_start.png" style="width: 40%;" />
@@ -497,6 +519,31 @@ symmetries that enable the network to reach zero errors.</p>
 <caption>Correlations among neuron assemblies at the beginning (left)
 and the end of the training (right).</caption>
 </figure>
+
+<p>More technically, the control parameters are coupling density among
+neural assemblies. To give an over-simplified demonstration, let
+$\mathbb{I}$ denote an index set indexing neuron assemblies; denote
+ $\mathcal{N}(\alpha)$ the set of assemblies that couple with the
+ assembly $\alpha \in \mathbb{I}$. For theorem 2 to hold, each
+ $\alpha \in \mathbb{I}$ needs to satisfy $|\mathcal{N}(\alpha)| &lt;
+ \sqrt{N}$, where $N$ is the number of parameters of the network; that
+is, $\alpha$ is at most statistically dependent with $\sqrt{N}$
+neuron assemblies. The condition on control parameters are given as
+assumptions in the paper, and this constraint on coupling density is a
+simplified version of assumption 2 in the article <a class="citation" href="#shawn_w_m_li_2022_5814935">(Li, 2022)</a>. The neuron assemblies here are
+Hessian entries, and interested readers may refer to the article for details.</p>
+
+<p>Recall that neuron circuits start with input neurons, which are just
+data.  Therefore, the interaction could be roughly understood to
+encode the information in the dataset with hierarchical
+patterns. Therefore, the quantitative characterization (of control
+parameter) involves both the dataset and the model size: more
+specifically, it is an interplay between the <em>complexity of the
+dataset</em>, and the potential complexity of the information the network
+is able to encode, or in other words, <em>network capacity</em>. In this
+case, the interaction are still rather sparse given that the dataset
+is well beyond the network capacity. As a result, there are sufficient
+circuit symmetries that enable the network to reach zero errors.</p>
 
 <p>To summarize, we have given a formalism of DNN training, and validate
 it experimentally. The formalism and experiments show that</p>

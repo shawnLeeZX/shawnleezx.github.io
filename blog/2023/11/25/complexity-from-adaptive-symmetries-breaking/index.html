@@ -302,15 +302,34 @@ input neuron (from the left) to the output neuron (to the right),
 illustrated as the green line, we would get an ordered set and we
 refer this set as a <em>circuit</em>.</p>
 
+<p>More formally (though still simplified),
+let $\boldsymbol{I}_{l}$ denotes $\{1, \ldots, n_l \}, l \in \{1,
+\ldots, L\}$, where $n_l$ denotes the number of neurons of the
+network and $L$ is the number of layers,
+(c.f. the above illustration), and $l \in \{1, \ldots, L\}$ is the
+layer index up to $L$.
+Let $\boldsymbol{I}$ denote $\boldsymbol{I}_1 \otimes \ldots \otimes \boldsymbol{I}_L$,
+where $\otimes$ denotes Cartesian product.
+Then $\boldsymbol{I}$ denotes the indices of all circuits, and we could denote a
+circuit as</p>
+
+\[\Psi_{\boldsymbol{i}} = X_{i_1}W_{i_1 i_2}H_{i_2}\ldots W_{i_{L-1} i_{L}}H_{L},\]
+
+<p>where $\boldsymbol{i} \in \boldsymbol{I}$, $X_{i_1}$ is the input
+neuron $i_1$, $W_{i_1 i_2}$ is the weight connect neuron $i_1,
+i_2$, $H_{i_2}$ is the hidden neuron $i_2$, and so on.</p>
+
 <p>To give simplistic understand of the circuit’s behaviors, we might
 understand each neuron as a gate that decides whether the circuit that
 it belongs is activated (and thus a circuit is controlled by multiple
 gates), and the weights are scalars that multiplied together when this
 circuit activates.</p>
 
-<p>Circuits play the role of atoms in physics, and by looking at the
-network as an ensemble of neural circuits, we could see symmetries
-arise.</p>
+<p>By looking at the network as an ensemble of neural circuits, we could
+see symmetries arise. Circuits play the role of atoms in physics, and
+later neuron ensemble is just the summation of those circuits, just
+like the magnetic force is in a sense the summation of individual atom
+magnetic field.</p>
 
 <h4 id="circuit-symmetry-symmetry-of-organism">Circuit symmetry: symmetry of organism</h4>
 
@@ -365,10 +384,12 @@ readable, and interesting readers may refer to the paper.</p>
 coarse-graining (or summation) of those symmetrically distributed
 circuits (in which, for example, the output neuron is literally a
 neural assembly) is also symmetrically distributed
-probabilistically in the PAC sense. We show the distribution of neural
-assemblies in the following plots—the plots shown here are not
-distribution of neuron output, but gradient and Hessian entries, which
-are also neuron assemblies and are more relevant in the paper.</p>
+probabilistically in the PAC sense—though we would only done this
+for some types of the neuron assemblies that are relevant in the paper. We
+show the distribution of neural assemblies in the following
+plots—the plots shown here are not distribution of neuron output,
+but gradient and Hessian entries, which are also neuron assemblies and
+are more relevant in the paper.</p>
 
 <figure style="text-align: center;" id="neuron-assembly">
 <img src="/assets/fig_4a_gradients_distribution.png" style="width: 40%;" />
@@ -376,6 +397,16 @@ are also neuron assemblies and are more relevant in the paper.</p>
 <br />
 <caption>Distribution of neural assemblies</caption>
 </figure>
+
+<p>More formally, a neuron assembly is just the summation of all circuits
+in the assembly,</p>
+
+\[\sum_{\boldsymbol{i} \in \boldsymbol{I}}\Psi_{\boldsymbol{i}} = X_{i_1}W_{i_1 i_2}H_{i_2}\ldots W_{i_{L-1} i_{L}}H_{L},\]
+
+<p>and the summation/coarse-graining over $n^{L}$ (we assume all layer
+has $n$ neurons for simplicity) maintain the symmetry distribution in
+a PAC sense—here we use the output neuron as an example, and a
+neuron assembly could be other assemblies other than the output neurons.</p>
 
 <p>Therefore, the symmetry of circuit is self-similar to, and manifests
 at macroscopic as the symmetry of neural assemblies.</p>
@@ -533,6 +564,14 @@ assumptions in the paper, and this constraint on coupling density is a
 simplified version of assumption 2 in the article <a class="citation" href="#shawn_w_m_li_2022_5814935">(Li, 2022)</a>. The neuron assemblies here are
 Hessian entries, and interested readers may refer to the article for details.</p>
 
+<p>We give a rather toy outline of proof here, and interested readers may
+refer to the paper. The basic logic is that the circuit symmetry leads
+to some regularities among the neuron assemblies.  We make some
+restriction on the interaction among the neuron assemblies; this leads
+to the control parameters and is formulated as assumptions; Then,
+those restriction would result in the probability bound on the
+Hessian’ eigenvalue distribution, which is symmetric in PAC sense.</p>
+
 <p>Recall that neuron circuits start with input neurons, which are just
 data.  Therefore, the interaction could be roughly understood to
 encode the information in the dataset with hierarchical
@@ -561,8 +600,11 @@ symmetry that enables the network to reach zero training errors.</li>
 
 <p>This straightforwardly lets us extrapolate the situation, what if we
 could increase the complexity of the dataset and the capacity of the
-network indefinitely? This leads to us to speculate scaling the model
-and the dataset, and naturally leads to the current marvelous large
+network indefinitely? We have known that DNN has remarkable
+generalization capacity (though this is also an interesting problem to
+study scientifically), and thus a lower training error accompanies
+lower test error. This leads to us to speculate scaling the model and
+the dataset, and naturally leads to the current marvelous large
 language models.</p>
 
 <p>Nonetheless, this could be argued as merely posterior insight. The

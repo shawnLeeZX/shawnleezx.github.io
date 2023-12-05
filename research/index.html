@@ -126,7 +126,7 @@ worked on.</p>
   </li>
   <li><a href="#research-problems" id="markdown-toc-research-problems">Research Problems</a>    <ul>
       <li><a href="#foundation-models-for-control" id="markdown-toc-foundation-models-for-control">Foundation models for control</a></li>
-      <li><a href="#complex-reasoning" id="markdown-toc-complex-reasoning">Complex reasoning</a></li>
+      <li><a href="#long-horizon-embodied-agent-alignment" id="markdown-toc-long-horizon-embodied-agent-alignment">Long-horizon embodied agent alignment</a></li>
       <li><a href="#superalignment-and-reinforcement-learning-fundamentals" id="markdown-toc-superalignment-and-reinforcement-learning-fundamentals">Superalignment, and reinforcement learning fundamentals</a></li>
     </ul>
   </li>
@@ -137,10 +137,13 @@ worked on.</p>
 <h4 id="science-of-intelligence-biotic-or-congnitive-complexity-through-adaptive-symmetries-breaking">Science of intelligence: biotic or congnitive complexity through adaptive symmetries breaking</h4>
 
 <p>Previously, I have spent about 10 years investigating first-principle
-derivation of Deep Neural Networks (DNNs), crystallizing the ideas in two
-papers—<a href="https://zenodo.org/record/5814935">a letter</a> introducing
-the main ideas, and a more <a href="https://zenodo.org/record/5814961">technical article</a> (where most
-technicalities are put in the ~100 pages appendices).</p>
+derivation of Deep Neural Networks (DNNs), crystallizing the ideas in
+two papers—<a href="https://zenodo.org/record/5814935">a letter</a>
+introducing the main ideas, and a more <a href="https://zenodo.org/record/5814961">technical article</a> (where
+most technicalities are put in the ~100 pages appendices).  An
+introductory
+<a href="/blog/2023/11/25/complexity-from-adaptive-symmetries-breaking/">blog</a>
+is also written to introduce the article intuitively.</p>
 
 <p>The basic idea is that Deep Neural Network (DNN) is a phenomenological model
 of biotic intelligence, and DNNs could be studied similarly to physics through
@@ -155,10 +158,6 @@ survival and reproduction is decreased; that is, to adapt to the world.</p>
 DNNs that enable learning of the network to stay within a phase where arbitrary
 learning errors could be reduced. That is, biotic or cognitive complexity
 arises from adaptive-symmetries breaking.</p>
-
-<p>An introductory
-<a href="/blog/2023/11/25/complexity-from-adaptive-symmetries-breaking/">blog</a>
-is written to introduce the article intuitively.</p>
 
 <h4 id="embodied-intelligence-uncertainty-reduction-through-feedback-control-loop-with-environment">Embodied intelligence: uncertainty reduction through feedback-control loop with environment</h4>
 
@@ -192,21 +191,22 @@ of artificial intelligence on societies.</p>
 
 <p>The goal of decreasing uncertainty of reproduction is decomposed into
 two problems by biotic intelligence by timescales: the prediction
-under and above hundreds of milliseconds. The mechanism that predicts
-at the fast timescale is known as instincts, and the mechanism that
-predicts at the slow timescale is known as consciousness, reasoning,
-memory, and other modules function at our daily life timescale. These
-are known as system 1 and system 2.</p>
+under, and the prediction above hundreds of milliseconds. The
+mechanism that predicts at the fast timescale is known as instincts,
+and the mechanism that predicts at the slow timescale is known as
+consciousness, reasoning, memory, and other modules function at our
+daily life timescale. These are known as system 1 and system 2.</p>
 
 <p>Therefore, the study of embodied intelligence is broken down into
 studying these two mechanisms.  The frontier of the research thus has
 reached the state where we have a system close to human instincts in
 language processing—this is known as pretrained <em>Foundation Models</em>. And
 the slow system is being investigated largely under the name of <em>Agent</em>,
-which involves reasoning, vector memory and other technologies. The
-bridge of the two is investigated under the name of <em>Alignment</em>, where
-long horizontal goal is aligned onto a foundation model according to
-our design.</p>
+which requires long horizontal reasoning and interaction with the
+Internet, and also involves system 2 concepts such as long term memory.
+The bridge of the two is investigated under the name of <em>Alignment</em>,
+where the foundation model is aligned to human intentions, and becomes
+an agent.</p>
 
 <p>Some clarification might be needed here, given that alignment has a
 connotation to safety issues.  The developmental progress of an
@@ -237,12 +237,12 @@ words, semantic) information packet of the words, and thus predicting
 next-word sidesteps the problem of building coarse-grained abstraction
 of the world from raw signals (e.g., pixels). An intelligence in the
 physical world (e.g., autonomous robots) needs somehow to have a
-mechanism to build abstractions from raw signals. A foundation model
-for control needs such abstraction capability, and this abstraction
-might manifest as animal-level instinct to navigate in the physical
-world.</p>
+mechanism to build abstraction from raw signals that are directly wired
+with control. A foundation model for control needs such abstraction
+capability, and this abstraction might manifest as animal-level
+instinct to navigate in the physical world.</p>
 
-<h4 id="complex-reasoning">Complex reasoning</h4>
+<h4 id="long-horizon-embodied-agent-alignment">Long-horizon embodied agent alignment</h4>
 
 <p>A significant capability of the slow system manifests as long-horizon
 decision or reasoning capability. We study this problem under the
@@ -253,19 +253,23 @@ assistant (e.g., one that we could truly delegate complex tasks). To
 make a language model “understand” our request, a mechanism of
 feedback and long-chain reasoning need to be incorporated. Currently,
 this ability is nascent in language model, and we are studying how to
-enable complex and long-range reasoning and decision in LLM. This is
-probably what Q* or Gemini aim for.</p>
+enable long-horizon reasoning and decision that require
+tool usage in LLM. This is probably what Q* or Gemini aims for.</p>
 
 <h4 id="superalignment-and-reinforcement-learning-fundamentals">Superalignment, and reinforcement learning fundamentals</h4>
 
-<p>The previous problems focuses more on the model side of the formalism
-(between environment and model/agent), and at the environment side, we
-also work on giving language feedback or (AI feedback) for
-alignment. The idea is that generation is a NP problem, while
-discrimination is a P problem, and thus a good enough model
-could self-critique and self-improve. In addition to enabling scalable
-alignment, this might provide solution to hard RL problems such as
-sparse reward, and instability in RL training.</p>
+<p>The previous directions focus more on the problem side, and the previous
+problems likely enable the new development of reinforcement learning
+(RL) algorithms. Intuitively, humans could make skills instinctive
+through deliberate practice, and also come up with high quality
+solution through careful reasoning and self critique. We also works on
+formalism of those two behaviors. For the latter, it is roughly known
+as language feedback or AI feedback for alignment. The idea is that
+generation is a NP problem, while discrimination is a P problem, and
+thus a good enough model could self-critique and self-improve. In
+addition to enabling scalable alignment, this might provide solution
+to hard RL problems such as sparse reward, and instability in RL
+training.</p>
 
 </div>
 

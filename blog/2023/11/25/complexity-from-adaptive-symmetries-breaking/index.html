@@ -402,7 +402,7 @@ are more relevant in the paper.</p>
 <p>More formally, a neuron assembly is just the summation of all circuits
 in the assembly,</p>
 
-\[\sum_{\boldsymbol{i} \in \boldsymbol{I}}\Psi_{\boldsymbol{i}} = X_{i_1}W_{i_1 i_2}H_{i_2}\ldots W_{i_{L-1} i_{L}}H_{L},\]
+\[\sum_{\boldsymbol{i} \in \boldsymbol{I}}\Psi_{\boldsymbol{i}} =\sum_{(i_1,\ldots,i_L) \in \boldsymbol{I}} X_{i_1}W_{i_1 i_2}H_{i_2}\ldots W_{i_{L-1} i_{L}}H_{i_L},\]
 
 <p>and the summation/coarse-graining over $n^{L}$ (we assume all layer
 has $n$ neurons for simplicity) maintain the symmetry distribution in

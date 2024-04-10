@@ -136,7 +136,49 @@ worked on.</p>
 <h4 id="science-of-intelligence-biotic-or-congnitive-complexity-through-adaptive-symmetries-breaking">Science of intelligence: biotic or congnitive complexity through adaptive symmetries breaking</h4>
 
 <p>Previously, I have spent about 10 years investigating first-principle
-derivation of Deep Neural Networks (DNNs), crystallizing the ideas in
+derivation of Deep Neural Networks (DNNs).</p>
+
+<p>To connect the dots, the journey started with the marvel over DNNs’
+human-surpassing performance on vision tasks. There is a saying that
+“the greatest discovery of the 19th century was that the laws of
+nature are linear, and the greatest discovery of the 20th century was
+that they are not”. The key in DNNs is the nonlinear activation
+function, and thus at the beginning I studied how to understand the
+<em>activation function</em> through harmonic analysis, statistical physics,
+and group theory in my M. Phil
+<a href="https://repository.lib.cuhk.edu.hk/en/item/cuhk-1839231?solr_nav%5Bid%5D=98915f76dfe0defc8901&amp;solr_nav%5Bpage%5D=0&amp;solr_nav%5Boffset%5D=0">thesis</a>.</p>
+
+<p>The study led to the idea that a neural network could be
+characterized as a feedback control loop, where each layer processes
+information, and receives feedback from the output layer (which
+computes loss). In this loop, each input example is an information
+perturbation to the network, and the weights are wired in response to
+those perturbations to reduce loss and thus reduce errors in
+decisions. The impact of neural weights and activation function could
+be bounded by singular values (of the weight matrices); and thus to
+prevent a network from overreacting to examples, we restrict the
+network’s singular values to a band around 1. This restriction keeps
+the information propagation at the edge of chaos, and improves
+generalization. This work was published on
+<a href="https://www.computer.org/csdl/journal/tp/2021/04/08877742/1emy2K3xVWE">TPAMI</a>.</p>
+
+<p>This idea of perturbation naturally connects to adversarial
+examples/perturbations, and thus we also study the network’s behaviors
+in response to adversarial training, and found that adversarial
+training could be understood as a form of regularization that is too
+strong. The takeaway is that adversarial examples are not bugs, but
+features, and fixing them requires foundational work. This work is
+published on <a href="http://proceedings.mlr.press/v119/wen20c/wen20c.pdf">ICML</a>.</p>
+
+<p>Those two works led me to crystallize the idea that the training of a
+ DNN is a learning process that reduces <em>informational perturbations</em>,
+ which previously was an idea in the background. More specifically,
+these previous two works tries to give a macroscopic characterization of
+the network, and further pursuing this idea leads me to study how to
+connect microscopic neurons to macroscopic behaviors of DNNs, where
+the perturbation reduction process is characterized as a statistical
+mechanical characterization of DNNs,
+crystallizing the ideas in
 two papers—<a href="https://zenodo.org/record/5814935">a letter</a>
 introducing the main ideas, and a more <a href="https://zenodo.org/record/5814961">technical article</a> (where
 most technicalities are put in the ~100 pages appendices).  An
@@ -150,9 +192,9 @@ symmetries, though the symmetries here are not conservative symmetries in
 physics, but a symmetry perhaps that might form a different paradigm, and is
 referred as <em>adaptive symmetry</em>. The learning process could be
 formalized as a symmetries-breaking process where these symmetries are
-broken to build a model of the world that could predict the future,
-such that the uncertainty of survival and reproduction is decreased;
-that is, to adapt to the world.</p>
+broken by information perturbations to build a model of the world that
+could predict the future, such that the uncertainty of survival and
+reproduction is decreased; that is, to adapt to the world.</p>
 
 <p>Those adaptive symmetries could be understood as choices that would be
 made by us with equal chance—humans are organic system as well:</p>
@@ -164,7 +206,9 @@ And sorry I could not travel both. —  Robert Frost</p>
 
 <p>And chosen choices are broken symmetries.</p>
 
-<p>More technically, there exists concentration of measures phenomena
+<p>As the first result of this characterization, it explains why DNNs have such strong
+fitting capacity that could find almost zero risk when it is large
+enough. Technically, there exists concentration of measures phenomena
 induced by aforementioned adaptive symmetries for large DNNs that
 enable learning of the network to stay within a phase where arbitrary
 learning errors could be reduced.</p>

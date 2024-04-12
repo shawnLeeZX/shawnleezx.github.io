@@ -144,22 +144,22 @@ human-surpassing performance on vision tasks. There is a saying that
 nature are linear, and the greatest discovery of the 20th century was
 that they are not”. The key in DNNs is the nonlinear activation
 function, and thus at the beginning I studied how to understand the
-<em>activation function</em> through harmonic analysis, statistical physics,
+<em>nonlinear activation function</em> through harmonic analysis, statistical physics,
 and group theory in my M. Phil
 <a href="https://repository.lib.cuhk.edu.hk/en/item/cuhk-1839231?solr_nav%5Bid%5D=98915f76dfe0defc8901&amp;solr_nav%5Bpage%5D=0&amp;solr_nav%5Boffset%5D=0">thesis</a>.</p>
 
 <p>The study led to the idea that a neural network could be
 characterized as a feedback control loop, where each layer processes
-information, and receives feedback from the output layer (which
-computes loss). In this loop, each input example is an information
-perturbation to the network, and the weights are wired in response to
-those perturbations to reduce loss and thus reduce errors in
-decisions. The impact of neural weights and activation function could
-be bounded by singular values (of the weight matrices); and thus to
-prevent a network from overreacting to examples, we restrict the
-network’s singular values to a band around 1. This restriction keeps
-the information propagation at the edge of chaos, and improves
-generalization. This work was published on
+information, and receives feedback from the next layer, which
+recursively from the output layer (which computes loss). In this loop,
+each input example is an information perturbation to the network, and
+the weights are wired in response to those perturbations to reduce
+loss and thus reduce errors in decisions. The impact of neural weights
+and activation function could be bounded by singular values (of the
+weight matrices); and thus to prevent a network from overreacting to
+examples, we restrict the network’s singular values to a band
+around 1. This restriction keeps the information propagation at the
+edge of chaos, and improves generalization. This work was published on
 <a href="https://www.computer.org/csdl/journal/tp/2021/04/08877742/1emy2K3xVWE">TPAMI</a>.</p>
 
 <p>This idea of perturbation naturally connects to adversarial
@@ -174,7 +174,7 @@ published on <a href="http://proceedings.mlr.press/v119/wen20c/wen20c.pdf">ICML<
  DNN is a learning process that reduces <em>informational perturbations</em>,
  which previously was an idea in the background. More specifically,
 these previous two works tries to give a macroscopic characterization of
-the network, and further pursuing this idea leads me to study how to
+the network, and further pursuing this idea led me to study how to
 connect microscopic neurons to macroscopic behaviors of DNNs, where
 the perturbation reduction process is characterized as a statistical
 mechanical characterization of DNNs,

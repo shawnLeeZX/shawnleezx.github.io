@@ -150,16 +150,18 @@ and group theory in my M. Phil
 
 <p>The study led to the idea that a neural network could be
 characterized as a feedback control loop, where each layer processes
-information, and receives feedback from the next layer, which
-recursively from the output layer (which computes loss). In this loop,
-each input example is an information perturbation to the network, and
-the weights are wired in response to those perturbations to reduce
-loss and thus reduce errors in decisions. The impact of neural weights
-and activation function could be bounded by singular values (of the
-weight matrices); and thus to prevent a network from overreacting to
-examples, we restrict the network’s singular values to a band
-around 1. This restriction keeps the information propagation at the
-edge of chaos, and improves generalization. This work was published on
+input from the previous layer and receives feedback from the
+next layer. The input recursively comes from the input neurons (which
+give input examples), and the feedback recursively comes from the output
+layer (which computes loss). In this loop, each input example is an information
+perturbation to the network, and the weights are wired in response to
+those perturbations to reduce loss and thus to reduce errors in
+decisions. The impact of neural weights and activation function could
+be bounded by singular values (of the weight matrices); and thus to
+prevent a network from overreacting to examples, we restrict the
+network’s singular values to a band around 1. This restriction keeps
+the information propagation at the edge of chaos, and improves
+generalization. This work was published on
 <a href="https://www.computer.org/csdl/journal/tp/2021/04/08877742/1emy2K3xVWE">TPAMI</a>.</p>
 
 <p>This idea of perturbation naturally connects to adversarial
